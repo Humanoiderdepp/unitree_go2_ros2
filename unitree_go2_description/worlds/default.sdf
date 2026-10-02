@@ -86,297 +86,448 @@
       </link>
     </model>
 
-    <!-- ============================================================ -->
-    <!-- ROOM: 10m (x: -5..5) x 8m (y: -4..4), walls 0.2m thick, 2.5m tall -->
-    <!-- Door 1: south wall, gap at x -2.5..-1.5, swung open into room -->
-    <!-- Door 2: east wall,  gap at y  0.5..1.5,  swung open into room -->
-    <!-- ============================================================ -->
-
-    <!-- South wall, segment A (west of door 1): x -5..-2.5 -->
-    <model name="wall_south_a">
+    <model name="school_floor">
       <static>true</static>
-      <pose>-3.75 -4 1.25 0 0 0</pose>
-      <link name="link">
+      <link name="library_south">
+        <pose>2.0 2.0 1.5 0 0 0</pose>
         <collision name="collision">
-          <geometry><box><size>2.5 0.2 2.5</size></box></geometry>
+          <geometry>
+            <box>
+              <size>6 0.4 3.0</size>
+            </box>
+          </geometry>
         </collision>
         <visual name="visual">
-          <geometry><box><size>2.5 0.2 2.5</size></box></geometry>
-          <material>
-            <ambient>0.85 0.85 0.82 1</ambient>
-            <diffuse>0.85 0.85 0.82 1</diffuse>
-          </material>
+          <geometry>
+            <box>
+              <size>6 0.4 3.0</size>
+            </box>
+          </geometry>
         </visual>
       </link>
-    </model>
-
-    <!-- South wall, segment B (east of door 1): x -1.5..5 -->
-    <model name="wall_south_b">
-      <static>true</static>
-      <pose>1.75 -4 1.25 0 0 0</pose>
-      <link name="link">
+      <link name="library_west">
+        <pose>-1.0 5.0 1.5 0 0 0</pose>
         <collision name="collision">
-          <geometry><box><size>6.5 0.2 2.5</size></box></geometry>
+          <geometry>
+            <box>
+              <size>0.4 6.4 3.0</size>
+            </box>
+          </geometry>
         </collision>
         <visual name="visual">
-          <geometry><box><size>6.5 0.2 2.5</size></box></geometry>
-          <material>
-            <ambient>0.85 0.85 0.82 1</ambient>
-            <diffuse>0.85 0.85 0.82 1</diffuse>
-          </material>
+          <geometry>
+            <box>
+              <size>0.4 6.4 3.0</size>
+            </box>
+          </geometry>
         </visual>
       </link>
-    </model>
-
-    <!-- North wall (no door): x -5..5 -->
-    <model name="wall_north">
-      <static>true</static>
-      <pose>0 4 1.25 0 0 0</pose>
-      <link name="link">
+      <link name="library_east">
+        <pose>5.0 4.5 1.5 0 0 0</pose>
         <collision name="collision">
-          <geometry><box><size>10.2 0.2 2.5</size></box></geometry>
+          <geometry>
+            <box>
+              <size>0.4 5.4 3.0</size>
+            </box>
+          </geometry>
         </collision>
         <visual name="visual">
-          <geometry><box><size>10.2 0.2 2.5</size></box></geometry>
-          <material>
-            <ambient>0.85 0.85 0.82 1</ambient>
-            <diffuse>0.85 0.85 0.82 1</diffuse>
-          </material>
+          <geometry>
+            <box>
+              <size>0.4 5.4 3.0</size>
+            </box>
+          </geometry>
         </visual>
       </link>
-    </model>
-
-    <!-- West wall (no door): y -4..4 -->
-    <model name="wall_west">
-      <static>true</static>
-      <pose>-5 0 1.25 0 0 0</pose>
-      <link name="link">
+      <link name="northeast_wall">
+        <pose>9.0 7.0 1.5 0 0 0</pose>
         <collision name="collision">
-          <geometry><box><size>0.2 8 2.5</size></box></geometry>
+          <geometry>
+            <box>
+              <size>8 0.4 3.0</size>
+            </box>
+          </geometry>
         </collision>
         <visual name="visual">
-          <geometry><box><size>0.2 8 2.5</size></box></geometry>
-          <material>
-            <ambient>0.85 0.85 0.82 1</ambient>
-            <diffuse>0.85 0.85 0.82 1</diffuse>
-          </material>
+          <geometry>
+            <box>
+              <size>8 0.4 3.0</size>
+            </box>
+          </geometry>
         </visual>
       </link>
-    </model>
-
-    <!-- East wall, segment A (south of door 2): y -4..0.5 -->
-    <model name="wall_east_a">
-      <static>true</static>
-      <pose>5 -1.75 1.25 0 0 0</pose>
-      <link name="link">
+      <link name="south_wall_left">
+        <pose>-5.0 -4.0 1.5 0 0 0</pose>
         <collision name="collision">
-          <geometry><box><size>0.2 4.5 2.5</size></box></geometry>
+          <geometry>
+            <box>
+              <size>6 0.4 3.0</size>
+            </box>
+          </geometry>
         </collision>
         <visual name="visual">
-          <geometry><box><size>0.2 4.5 2.5</size></box></geometry>
-          <material>
-            <ambient>0.85 0.85 0.82 1</ambient>
-            <diffuse>0.85 0.85 0.82 1</diffuse>
-          </material>
+          <geometry>
+            <box>
+              <size>6 0.4 3.0</size>
+            </box>
+          </geometry>
         </visual>
       </link>
-    </model>
-
-    <!-- East wall, segment B (north of door 2): y 1.5..4 -->
-    <model name="wall_east_b">
-      <static>true</static>
-      <pose>5 2.75 1.25 0 0 0</pose>
-      <link name="link">
+      <link name="south_wall_right">
+        <pose>7.0 -4.0 1.5 0 0 0</pose>
         <collision name="collision">
-          <geometry><box><size>0.2 2.5 2.5</size></box></geometry>
+          <geometry>
+            <box>
+              <size>12 0.4 3.0</size>
+            </box>
+          </geometry>
         </collision>
         <visual name="visual">
-          <geometry><box><size>0.2 2.5 2.5</size></box></geometry>
-          <material>
-            <ambient>0.85 0.85 0.82 1</ambient>
-            <diffuse>0.85 0.85 0.82 1</diffuse>
-          </material>
+          <geometry>
+            <box>
+              <size>12 0.4 3.0</size>
+            </box>
+          </geometry>
         </visual>
       </link>
-    </model>
-
-    <!-- Door 1 leaf, hinged at (-2.5,-4), swung fully open into the room along +y -->
-    <model name="door1_open">
-      <static>true</static>
-      <pose>-2.5 -3.5 1 0 0 0</pose>
-      <link name="link">
+      <link name="west_wall_long">
+        <pose>-8.0 -3.0 1.5 0 0 0</pose>
         <collision name="collision">
-          <geometry><box><size>0.05 1 2</size></box></geometry>
+          <geometry>
+            <box>
+              <size>0.4 8.4 3.0</size>
+            </box>
+          </geometry>
         </collision>
         <visual name="visual">
-          <geometry><box><size>0.05 1 2</size></box></geometry>
-          <material>
-            <ambient>0.5 0.32 0.2 1</ambient>
-            <diffuse>0.5 0.32 0.2 1</diffuse>
-          </material>
+          <geometry>
+            <box>
+              <size>0.4 8.4 3.0</size>
+            </box>
+          </geometry>
         </visual>
       </link>
-    </model>
-
-    <!-- Door 2 leaf, hinged at (5,0.5), swung fully open into the room along -x -->
-    <model name="door2_open">
-      <static>true</static>
-      <pose>4.5 0.5 1 0 0 0</pose>
-      <link name="link">
+      <link name="west_wall_upper">
+        <pose>-8.0 4.5 1.5 0 0 0</pose>
         <collision name="collision">
-          <geometry><box><size>1 0.05 2</size></box></geometry>
+          <geometry>
+            <box>
+              <size>0.4 3.4 3.0</size>
+            </box>
+          </geometry>
         </collision>
         <visual name="visual">
-          <geometry><box><size>1 0.05 2</size></box></geometry>
-          <material>
-            <ambient>0.5 0.32 0.2 1</ambient>
-            <diffuse>0.5 0.32 0.2 1</diffuse>
-          </material>
+          <geometry>
+            <box>
+              <size>0.4 3.4 3.0</size>
+            </box>
+          </geometry>
         </visual>
       </link>
-    </model>
-
-    <!-- ============================================================ -->
-    <!-- KITCHEN: corner of the room, x 2..5, y -4..-1              -->
-    <!-- ============================================================ -->
-
-    <!-- Kitchen counter, against south wall -->
-    <model name="kitchen_counter">
-      <static>true</static>
-      <pose>3.3 -3.65 0.45 0 0 0</pose>
-      <link name="link">
+      <link name="west_wall_top_stub">
+        <pose>-8.0 7.5 1.5 0 0 0</pose>
         <collision name="collision">
-          <geometry><box><size>2.2 0.6 0.9</size></box></geometry>
+          <geometry>
+            <box>
+              <size>0.4 1.4 3.0</size>
+            </box>
+          </geometry>
         </collision>
         <visual name="visual">
-          <geometry><box><size>2.2 0.6 0.9</size></box></geometry>
-          <material>
-            <ambient>0.7 0.7 0.72 1</ambient>
-            <diffuse>0.7 0.7 0.72 1</diffuse>
-          </material>
+          <geometry>
+            <box>
+              <size>0.4 1.4 3.0</size>
+            </box>
+          </geometry>
         </visual>
       </link>
-    </model>
-
-    <!-- Fridge, corner next to counter -->
-    <model name="fridge">
-      <static>true</static>
-      <pose>4.65 -3.6 0.9 0 0 0</pose>
-      <link name="link">
+      <link name="west_room_south_stub">
+        <pose>-8.5 7.0 1.5 0 0 0</pose>
         <collision name="collision">
-          <geometry><box><size>0.7 0.7 1.8</size></box></geometry>
+          <geometry>
+            <box>
+              <size>1 0.4 3.0</size>
+            </box>
+          </geometry>
         </collision>
         <visual name="visual">
-          <geometry><box><size>0.7 0.7 1.8</size></box></geometry>
-          <material>
-            <ambient>0.9 0.9 0.9 1</ambient>
-            <diffuse>0.9 0.9 0.9 1</diffuse>
-          </material>
+          <geometry>
+            <box>
+              <size>1 0.4 3.0</size>
+            </box>
+          </geometry>
         </visual>
       </link>
-    </model>
-
-    <!-- Wall cabinet along east wall in the kitchen area -->
-    <model name="kitchen_cabinet">
-      <static>true</static>
-      <pose>4.75 -2.4 1.6 0 0 0</pose>
-      <link name="link">
+      <link name="west_room_north_stub">
+        <pose>-8.5 6.0 1.5 0 0 0</pose>
         <collision name="collision">
-          <geometry><box><size>0.4 1.4 0.6</size></box></geometry>
+          <geometry>
+            <box>
+              <size>1 0.4 3.0</size>
+            </box>
+          </geometry>
         </collision>
         <visual name="visual">
-          <geometry><box><size>0.4 1.4 0.6</size></box></geometry>
-          <material>
-            <ambient>0.5 0.32 0.2 1</ambient>
-            <diffuse>0.5 0.32 0.2 1</diffuse>
-          </material>
+          <geometry>
+            <box>
+              <size>1 0.4 3.0</size>
+            </box>
+          </geometry>
         </visual>
       </link>
-    </model>
-
-    <!-- Kitchen table -->
-    <model name="kitchen_table">
-      <static>true</static>
-      <pose>2.4 -2 0.4 0 0 0</pose>
-      <link name="link">
+      <link name="west_room_lower_stub">
+        <pose>-8.5 3.0 1.5 0 0 0</pose>
         <collision name="collision">
-          <geometry><cylinder><radius>0.6</radius><length>0.75</length></cylinder></geometry>
+          <geometry>
+            <box>
+              <size>1 0.4 3.0</size>
+            </box>
+          </geometry>
         </collision>
         <visual name="visual">
-          <geometry><cylinder><radius>0.6</radius><length>0.75</length></cylinder></geometry>
-          <material>
-            <ambient>0.55 0.38 0.24 1</ambient>
-            <diffuse>0.55 0.38 0.24 1</diffuse>
-          </material>
+          <geometry>
+            <box>
+              <size>1 0.4 3.0</size>
+            </box>
+          </geometry>
         </visual>
       </link>
-    </model>
-
-    <!-- Chairs around the table -->
-    <model name="kitchen_chair1">
-      <static>true</static>
-      <pose>2.4 -2.9 0.225 0 0 0</pose>
-      <link name="link">
+      <link name="north_room_south">
+        <pose>-4.5 7.0 1.5 0 0 0</pose>
         <collision name="collision">
-          <geometry><cylinder><radius>0.2</radius><length>0.45</length></cylinder></geometry>
+          <geometry>
+            <box>
+              <size>3 0.4 3.0</size>
+            </box>
+          </geometry>
         </collision>
         <visual name="visual">
-          <geometry><cylinder><radius>0.2</radius><length>0.45</length></cylinder></geometry>
-          <material>
-            <ambient>0.45 0.3 0.2 1</ambient>
-            <diffuse>0.45 0.3 0.2 1</diffuse>
-          </material>
+          <geometry>
+            <box>
+              <size>3 0.4 3.0</size>
+            </box>
+          </geometry>
         </visual>
       </link>
-    </model>
-
-    <model name="kitchen_chair2">
-      <static>true</static>
-      <pose>2.4 -1.1 0.225 0 0 0</pose>
-      <link name="link">
+      <link name="north_room_west">
+        <pose>-6.0 7.5 1.5 0 0 0</pose>
         <collision name="collision">
-          <geometry><cylinder><radius>0.2</radius><length>0.45</length></cylinder></geometry>
+          <geometry>
+            <box>
+              <size>0.4 1.4 3.0</size>
+            </box>
+          </geometry>
         </collision>
         <visual name="visual">
-          <geometry><cylinder><radius>0.2</radius><length>0.45</length></cylinder></geometry>
-          <material>
-            <ambient>0.45 0.3 0.2 1</ambient>
-            <diffuse>0.45 0.3 0.2 1</diffuse>
-          </material>
+          <geometry>
+            <box>
+              <size>0.4 1.4 3.0</size>
+            </box>
+          </geometry>
         </visual>
       </link>
-    </model>
-
-    <model name="kitchen_chair3">
-      <static>true</static>
-      <pose>1.5 -2 0.225 0 0 0</pose>
-      <link name="link">
+      <link name="north_room_east">
+        <pose>-3.0 7.5 1.5 0 0 0</pose>
         <collision name="collision">
-          <geometry><cylinder><radius>0.2</radius><length>0.45</length></cylinder></geometry>
+          <geometry>
+            <box>
+              <size>0.4 1.4 3.0</size>
+            </box>
+          </geometry>
         </collision>
         <visual name="visual">
-          <geometry><cylinder><radius>0.2</radius><length>0.45</length></cylinder></geometry>
-          <material>
-            <ambient>0.45 0.3 0.2 1</ambient>
-            <diffuse>0.45 0.3 0.2 1</diffuse>
-          </material>
+          <geometry>
+            <box>
+              <size>0.4 1.4 3.0</size>
+            </box>
+          </geometry>
         </visual>
       </link>
-    </model>
-
-    <model name="kitchen_chair4">
-      <static>true</static>
-      <pose>3.3 -2 0.225 0 0 0</pose>
-      <link name="link">
+      <link name="closed_room_north">
+        <pose>7.0 -1.0 1.5 0 0 0</pose>
         <collision name="collision">
-          <geometry><cylinder><radius>0.2</radius><length>0.45</length></cylinder></geometry>
+          <geometry>
+            <box>
+              <size>4 0.4 3.0</size>
+            </box>
+          </geometry>
         </collision>
         <visual name="visual">
-          <geometry><cylinder><radius>0.2</radius><length>0.45</length></cylinder></geometry>
-          <material>
-            <ambient>0.45 0.3 0.2 1</ambient>
-            <diffuse>0.45 0.3 0.2 1</diffuse>
-          </material>
+          <geometry>
+            <box>
+              <size>4 0.4 3.0</size>
+            </box>
+          </geometry>
+        </visual>
+      </link>
+      <link name="closed_room_west">
+        <pose>5.0 -2.5 1.5 0 0 0</pose>
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>0.4 3.4 3.0</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>0.4 3.4 3.0</size>
+            </box>
+          </geometry>
+        </visual>
+      </link>
+      <link name="closed_room_east">
+        <pose>9.0 -2.5 1.5 0 0 0</pose>
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>0.4 3.4 3.0</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>0.4 3.4 3.0</size>
+            </box>
+          </geometry>
+        </visual>
+      </link>
+      <link name="east_wall">
+        <pose>13.0 -2.5 1.5 0 0 0</pose>
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>0.4 3.4 3.0</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>0.4 3.4 3.0</size>
+            </box>
+          </geometry>
+        </visual>
+      </link>
+      <link name="entrance_west">
+        <pose>-2.0 -5.0 1.5 0 0 0</pose>
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>0.4 2.4 3.0</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>0.4 2.4 3.0</size>
+            </box>
+          </geometry>
+        </visual>
+      </link>
+      <link name="entrance_east">
+        <pose>1.0 -5.0 1.5 0 0 0</pose>
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>0.4 2.4 3.0</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>0.4 2.4 3.0</size>
+            </box>
+          </geometry>
+        </visual>
+      </link>
+      <link name="staircase_block">
+        <pose>-6.5 -0.5 1.5 0 0 0</pose>
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>3 3 3.0</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>3 3 3.0</size>
+            </box>
+          </geometry>
+        </visual>
+      </link>
+      <link name="pillar_small">
+        <pose>-2.5 0.5 0.5 0 0 0</pose>
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>1 1 1.0</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>1 1 1.0</size>
+            </box>
+          </geometry>
+        </visual>
+      </link>
+      <link name="obstacle_upper_left">
+        <pose>7.5 4.0 0.5 0 0 0</pose>
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>1 2 1.0</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>1 2 1.0</size>
+            </box>
+          </geometry>
+        </visual>
+      </link>
+      <link name="obstacle_upper_right">
+        <pose>10.5 4.0 0.5 0 0 0</pose>
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>1 2 1.0</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>1 2 1.0</size>
+            </box>
+          </geometry>
+        </visual>
+      </link>
+      <link name="obstacle_square">
+        <pose>11.0 -2.0 0.5 0 0 0</pose>
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>2 2 1.0</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>2 2 1.0</size>
+            </box>
+          </geometry>
         </visual>
       </link>
     </model>
